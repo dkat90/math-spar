@@ -1,0 +1,68 @@
+.playerAnswer {
+  border:1px solid black;
+  width: 300px;
+  font-size: 20px;
+
+}
+
+.playerLives {
+  border:1px solid black;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.equationBox{
+  border:1px solid black;
+  width: 600px;
+  text-align: center;
+  margin: 10px;
+  font-size: 30px;
+}
+
+#playerDisplay {
+  border:1px solid black;
+}
+
+#playerTurn {
+  border:1px solid black;
+}
+
+#playerBox {
+  display: flex;
+  border:1px solid black;
+  align-items: center;
+  flex-direction: column;
+}
+
+#playArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#givenAnswer{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 10px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer{
+  border:1px solid black;
+  text-align: center;
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+p {
+  font-size: 20px;
+}
