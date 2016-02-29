@@ -30,7 +30,8 @@
 #playArea {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  margin: 20px; }
 
 #givenAnswer {
   display: flex;
@@ -38,21 +39,36 @@
   text-align: center;
   margin: 10px; }
 
+#equationArea {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-size: 20px; }
+
+#greetings {
+  font-size: 25px;
+  margin: 20px; }
+
 header {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  margin: 20px; }
 
 footer {
   border: 1px solid black;
-  text-align: center; }
+  text-align: center;
+  margin-top: 40px; }
 
 section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
 
-p {
-  font-size: 20px; }
+button {
+  margin: 10px; }
+
+body {
+  font-family: 'Indie Flower', cursive; }
 
 /*# sourceMappingURL=style.css.map */
