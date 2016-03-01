@@ -6,17 +6,19 @@
 }
 
 .playerLives {
-  border:1px solid black;
-  margin: 10px;
-  font-size: 20px;
+  margin: 20px 20px 20px 40px;
+  font-size:30px;
 }
 
-.equationBox{
+#equationArea{
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: row;
   border:1px solid black;
-  width: 600px;
+  width: 450px;
   text-align: center;
   margin: 10px;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 #playerDisplay {
@@ -47,13 +49,6 @@
   margin: 10px;
 }
 
-#equationArea{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  font-size: 20px;
-}
-
 #greetings{
   font-size:25px;
   margin: 20px;
@@ -80,8 +75,20 @@ section{
 
 button {
   margin: 10px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 15px;
 }
 
 body {
   font-family: 'Indie Flower', cursive;
+}
+
+span{
+  text-align: center;
+}
+
+img {
+  height:50px;
+  width:50px;
+  border: none;
 }

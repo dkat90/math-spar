@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/style.css" >
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>DKAT</title>
 </head>
 <body>
@@ -13,28 +14,24 @@
     <div id="greetings">
       Welcome to Math Spar!
     </div>
-    <button>
-      Game Start
+    <button id="restart">
+      Game Restart
     </button>
     <div id="playerTurn">
-      Which player is it now?
+      Player 1 always starts!
     </div>
   </header>
   <article id="playArea">
     <div id ="equationArea">
-    <span id="valueX">X</span>
-    <span id="operator">!@#$</span>
-    <span id="valueY">Y</span>
+      <div id="displayEquation">
+        <span id="valueX">X</span>
+        <span id="operator">#</span>
+        <span id="valueY">Y</span>
+      </div>
     </div>
     <div id="givenAnswer">
       <div class="playerAnswer" id="aBoxOne">
-          answer
-      </div>
-      <div class="playerAnswer" id="aBoxTwo">
-        answer
-      </div>
-      <div class="playerAnswer" id="aBoxThree">
-        answer
+        Are you right or Wrong?
       </div>
     </div>
   </article>
@@ -42,14 +39,14 @@
   <article id="playerBox">
     <form id="finalAnswer">
       Answer: <input id="playerAnswer" type="text">
-      <input type="submit">
     </form>
     <section>
       <div class="playerLives">
-        Player 1 How many lives left?
+          <span id="oneLives"></span><i class="fa fa-heartbeat"></i>
+      </div>
       </div>
       <div class="playerLives">
-        Player 2 How many lives left?
+          <span id="twoLives"></span><i class="fa fa-heartbeat"></i>
       </div>
     </section>
 
