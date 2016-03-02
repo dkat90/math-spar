@@ -10,20 +10,24 @@ $(document).ready(function () {
 
     function getRandomNumber (min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
-    }
+    }// random number to generate for operators
 
     this.displayPlayerLives = function () {
       $("#oneLives").text("Player 1: " + player1Lives);
       $("#twoLives").text("Player 2: " + player2Lives);
-    }
-    this.displayPlayerLives();// displays player lives
+    }// displays player lives
 
-    function reducePlayerLives(){
+    this.reducePlayerLives= function(){
+        console.log(this.player)
         console.log("Reduce player lives works!")
-        if (this.player = 1) {
+        if (this.player === 1) {
           player1Lives = player1Lives - 1;
-        } else if (this.player = 2) {
+          $("#oneLives").text("Player 1: " + player1Lives);
+          console.log("Player 1 Lives Reduced!")
+        } else if (this.player === 2) {
           player2Lives = player2Lives - 1;
+          $("#twoLives").text("Player 2: " + player2Lives);
+          console.log("Player 2 Lives Reduced!")
         }
       }//function to reduce player lives when they get a question wrong
 
@@ -40,14 +44,13 @@ $(document).ready(function () {
         return (this.player = 2);
       } else if(this.player === 2) {
         return (this.player = 1);
-      }
-      //changes player internally
+      }//changes player internally
     }
 
     this.setValues = function (min, max) {
       this.x = Math.floor(Math.random() * (max - min)) + min;
       this.y = Math.floor(Math.random() * (max - min)) + min;
-    }
+    } //setting values of x and y
 
     this.selectOperator = function () {
       var choice = getRandomNumber(0, 3);
@@ -74,7 +77,7 @@ $(document).ready(function () {
     }
 
     this.getUserInput = function () {
-      return Number($('#playerAnswer').val());
+      return Number($('#playerInput').val());
     }
 
     this.checkUserInput = function (userInput) {
@@ -106,16 +109,25 @@ $(document).ready(function () {
         this.start();
       } else {
         $('#aBoxOne').text('Whoa!Your math stinks! Lose a life!');
-        reducePlayerLives();
+        console.log(this.player)
+        this.reducePlayerLives();
         this.start();
         console.log("Player1lives = " + player1Lives);
         console.log("Player2Lives = " + player2Lives);
       }
-    }
+    }//get results
 
-    function clearAnswer () {
-      $('#playerAnswer').val("")
+    this.clearAnswer =function () {
+      $('#playerInput').val("")
       }// clears the board after each time after enter is pressed
+
+    this.checkForWinner= function (){
+      if(player1Lives === 0) {
+        window.alert("Player 1..YOU LOSE!")
+      } else if (player2Lives === 0) {
+        window.alert("Player 2...YOU LOSE!")
+      }
+    }
 
     this.enterEventHandler = function (event) {
       if (event.keyCode === 13) {
@@ -125,21 +137,22 @@ $(document).ready(function () {
         this.changePlayer();
         this.displayPlayer();
         this.displayPlayerLives();
-        clearAnswer();
+        this.clearAnswer();
+        this.checkForWinner();
         console.log("This is the " + this.player)
       }
     }
 
     this.start = function () {
-      this.setValues(1, 50);
+      this.setValues(1, 20);
       this.selectOperator();
       this.solveEquation();
       this.displayEquation();
+      this.displayPlayerLives();
     }
   } // Game
 
   var game = new Game();
   game.start();
-  $('#playerAnswer').on('keydown', game.enterEventHandler.bind(game))
-  $('#restart').on('click', game.start.bind(game));
+  $('#playerInput').on('keydown', game.enterEventHandler.bind(game))
 });

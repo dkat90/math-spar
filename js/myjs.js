@@ -53,11 +53,22 @@ input.keydown(function (e) {
   //   if ($('<form>').text() = addition || subtraction ||  multiplication || division) {
   //     window.alert("Well done!")
   //   }
-  // }
-
+  //
 
   }
-
+  function reducePlayerLives(){
+      console.log(game.player)
+      console.log("Reduce player lives works!")
+      if (game.player === 1) {
+        player1Lives = player1Lives - 1;
+        $("#oneLives").text("Player 1: " + player1Lives);
+        console.log("Player 1 Lives Reduced!")
+      } else if (game.player === 2) {
+        player2Lives = player2Lives - 1;
+        $("#twoLives").text("Player 2: " + player2Lives);
+        console.log("Player 2 Lives Reduced!")
+      }
+    }//
 
 
 

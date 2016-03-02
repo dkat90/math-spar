@@ -14,43 +14,44 @@
     <div id="greetings">
       Welcome to Math Spar!
     </div>
-    <button id="restart">
-      Game Restart
-    </button>
     <div id="playerTurn">
       Player 1 always starts!
     </div>
   </header>
-  <article id="playArea">
-    <div id ="equationArea">
-      <div id="displayEquation">
-        <span id="valueX">X</span>
-        <span id="operator">#</span>
-        <span id="valueY">Y</span>
-      </div>
+  <div id="mainContainer">
+    <div id="container">
+      <article id="playArea">
+        <div id ="equationArea">
+          <div id="displayEquation">
+            <span id="valueX">X</span>
+            <span id="operator">#</span>
+            <span id="valueY">Y</span>
+          </div>
+        </div>
+        <div id="givenAnswer">
+          <div class="playerAnswer" id="aBoxOne">
+            Think you got what it takes?
+          </div>
+        </div>
+      </article>
+        <form id="finalAnswer">
+          Answer: <input id="playerInput" type="text">
+        </form>
+        <section>
+          <div class="playerLives">
+              <span id="oneLives"></span><i class="fa fa-heartbeat"></i>
+          </div>
+          <div class="playerLives">
+              <span id="twoLives"></span><i class="fa fa-heartbeat"></i>
+          </div>
+        </section>
     </div>
-    <div id="givenAnswer">
-      <div class="playerAnswer" id="aBoxOne">
-        Are you right or Wrong?
-      </div>
+    <div id="timerbox">
+      Hello!
     </div>
-  </article>
 
-  <article id="playerBox">
-    <form id="finalAnswer">
-      Answer: <input id="playerAnswer" type="text">
-    </form>
-    <section>
-      <div class="playerLives">
-          <span id="oneLives"></span><i class="fa fa-heartbeat"></i>
-      </div>
-      </div>
-      <div class="playerLives">
-          <span id="twoLives"></span><i class="fa fa-heartbeat"></i>
-      </div>
-    </section>
+  </div>
 
-  </article>
   <footer>
     Copyright
   </footer>

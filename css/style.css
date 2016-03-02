@@ -1,30 +1,44 @@
+.commonStyling, .playerLives, #displayEquation, #playerTurn, #playerInput, #aBoxOne {
+  border: 4px solid #FF8C00;
+  background-color: #8B7D6B;
+  color: #EBEBEB;
+  border-radius: 25px; }
+
 .playerAnswer {
   border: 1px solid black;
   width: 300px;
   font-size: 20px; }
 
 .playerLives {
-  margin: 20px 20px 20px 40px;
-  font-size: 30px; }
+  font-size: 30px;
+  width: 175px;
+  text-align: center;
+  margin: 20px; }
+
+#mainContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#timerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 #equationArea {
-  border: 1px solid black;
   width: 450px;
   text-align: center;
   margin: 10px;
   font-size: 35px; }
 
-#playerDisplay {
-  border: 1px solid black; }
-
 #playerTurn {
-  border: 1px solid black; }
-
-#playerBox {
-  display: flex;
-  border: 1px solid black;
-  align-items: center;
-  flex-direction: column; }
+  width: 200px;
+  text-align: center; }
 
 #playArea {
   display: flex;
@@ -32,15 +46,27 @@
   align-items: center;
   margin: 20px; }
 
+#playerInput {
+  font-size: 20px;
+  text-align: center; }
+
 #givenAnswer {
   display: flex;
   flex-direction: row;
   text-align: center;
   margin: 10px; }
 
+#finalAnswer {
+  color: #EBEBEB; }
+
+#aBoxOne {
+  font-size: 20px;
+  color: #EBEBEB; }
+
 #greetings {
   font-size: 25px;
-  margin: 20px; }
+  margin: 20px;
+  color: #EBEBEB; }
 
 header {
   display: flex;
@@ -49,14 +75,14 @@ header {
   margin: 20px; }
 
 footer {
-  border: 1px solid black;
   text-align: center;
-  margin-top: 40px; }
+  margin-top: 40px;
+  color: #EBEBEB; }
 
 section {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  align-items: center; }
 
 button {
   margin: 10px;
@@ -73,5 +99,12 @@ img {
   height: 50px;
   width: 50px;
   border: none; }
+
+html {
+  background: url(http://bernietolbert.com/wp-content/uploads/2014/01/chalkboard-background-background-labs-qis2map7.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */
