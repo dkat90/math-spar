@@ -10,11 +10,6 @@ $(document).ready(function () {
     var gintervalId = null;
     var gseconds = 6;
 
-
-    function getRandomNumber (min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }// random number to generate for operators
-
     this.startTimer =function() {
       console.log("timer start")
       if(gintervalId === null) {
@@ -37,7 +32,7 @@ $(document).ready(function () {
       } else {
         console.log("timer is counting down")
         gseconds = gseconds - 1;
-        $('#watch').text(gseconds);
+        $('#watch').text(gseconds).css('fontSize', '30px');
       }
     }// updates the time countdown from 5 deducting 1 every second
 
@@ -77,9 +72,12 @@ $(document).ready(function () {
       this.y = Math.floor(Math.random() * (max - min)) + min;
     } //setting values of x and y
 
+    function getRandomNumber (min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }// random number to generate for operators
+
     this.selectOperator = function () {
       var choice = getRandomNumber(0, 3);
-      console.log(choice)
       switch (choice) {
         case 0:
           this.operator = '+'
@@ -117,8 +115,6 @@ $(document).ready(function () {
       $('#valueX').text(this.x);
       $('#operator').text(this.operator);
       $('#valueY').text(this.y);
-      console.log(game)
-      console.log(this.x + ' ' + this.operator + ' ' + this.y + ' = ' + this.solution)
     }//displays equation for player to solve
 
     this.getResult = function(event) {
