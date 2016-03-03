@@ -6,37 +6,40 @@
 }
 
 
-.playerAnswer {
-  border:1px solid black;
-  width: 300px;
-  font-size: 20px;
-
-}
-
 .playerLives {
   font-size:30px;
   @extend .commonStyling;
-  width:175px;
+  width:200px;
   text-align: center;
   margin: 20px;
 }
 
+#oneLives{
+  color:#044581
+}
+
+#twoLives {
+  color:#B22222
+}
+
 #mainContainer {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
-#container {
+#left {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#timerBox{
+#right{
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #EBEBEB;
+  margin-right: -300px;
 }
 
 #equationArea{
@@ -53,6 +56,8 @@
   @extend .commonStyling;
   width: 200px;
   text-align: center;
+  font-size: 22px;
+  width: 250px;
 }
 
 #playArea{
@@ -66,6 +71,7 @@
   @extend .commonStyling;
   font-size: 20px;
   text-align: center;
+  outline: none;
 }
 
 #givenAnswer{
@@ -83,12 +89,25 @@
   font-size: 20px;
   @extend .commonStyling;
   color: #EBEBEB;
+  width: 350px;
 }
 
 #greetings{
   font-size:25px;
   margin: 20px;
   color: #EBEBEB;
+}
+
+#watch {
+  font-size: 20px;
+  @extend .commonStyling;
+  width: 100px;
+  text-align: center;
+  color: yellow;
+}
+
+i{
+  color:#FFC1C1
 }
 
 header {
@@ -113,14 +132,8 @@ section{
   align-items: center;
 }
 
-button {
-  margin: 10px;
-  font-family: 'Indie Flower', cursive;
-  font-size: 15px;
-}
-
 body {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Architects Daughter', cursive;
 }
 
 span{

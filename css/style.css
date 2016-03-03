@@ -1,34 +1,37 @@
-.commonStyling, .playerLives, #displayEquation, #playerTurn, #playerInput, #aBoxOne {
+.commonStyling, .playerLives, #displayEquation, #playerTurn, #playerInput, #aBoxOne, #watch {
   border: 4px solid #FF8C00;
   background-color: #8B7D6B;
   color: #EBEBEB;
   border-radius: 25px; }
 
-.playerAnswer {
-  border: 1px solid black;
-  width: 300px;
-  font-size: 20px; }
-
 .playerLives {
   font-size: 30px;
-  width: 175px;
+  width: 200px;
   text-align: center;
   margin: 20px; }
 
+#oneLives {
+  color: #044581; }
+
+#twoLives {
+  color: #B22222; }
+
 #mainContainer {
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
-#container {
+#left {
   display: flex;
   flex-direction: column;
   align-items: center; }
 
-#timerBox {
+#right {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  color: #EBEBEB;
+  margin-right: -300px; }
 
 #equationArea {
   width: 450px;
@@ -38,7 +41,9 @@
 
 #playerTurn {
   width: 200px;
-  text-align: center; }
+  text-align: center;
+  font-size: 22px;
+  width: 250px; }
 
 #playArea {
   display: flex;
@@ -48,7 +53,8 @@
 
 #playerInput {
   font-size: 20px;
-  text-align: center; }
+  text-align: center;
+  outline: none; }
 
 #givenAnswer {
   display: flex;
@@ -61,12 +67,22 @@
 
 #aBoxOne {
   font-size: 20px;
-  color: #EBEBEB; }
+  color: #EBEBEB;
+  width: 350px; }
 
 #greetings {
   font-size: 25px;
   margin: 20px;
   color: #EBEBEB; }
+
+#watch {
+  font-size: 20px;
+  width: 100px;
+  text-align: center;
+  color: yellow; }
+
+i {
+  color: #FFC1C1; }
 
 header {
   display: flex;
@@ -84,13 +100,8 @@ section {
   flex-direction: row;
   align-items: center; }
 
-button {
-  margin: 10px;
-  font-family: 'Indie Flower', cursive;
-  font-size: 15px; }
-
 body {
-  font-family: 'Indie Flower', cursive; }
+  font-family: 'Architects Daughter', cursive; }
 
 span {
   text-align: center; }

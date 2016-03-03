@@ -7,10 +7,39 @@ $(document).ready(function () {
     this.player = 1;
     var player1Lives = 3;
     var player2Lives = 3;
+    var gintervalId = null;
+    var gseconds = 6;
+
 
     function getRandomNumber (min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
     }// random number to generate for operators
+
+    this.startTimer =function() {
+      console.log("timer start")
+      if(gintervalId === null) {
+      gintervalId = window.setInterval(this.updateTime.bind(this), 1000)
+      }
+    }// starts the countdown timer
+
+    this.resetTimer=function(){
+      console.log(gintervalId);
+      gseconds = 6;
+    }//resets timer once clicked
+
+    this.updateTime=function() {
+      console.log(this)
+      if (gseconds <= 0) {
+        window.clearInterval(gintervalId)
+        gintervalId = null;
+        this.nextPlayersTurn();
+        return
+      } else {
+        console.log("timer is counting down")
+        gseconds = gseconds - 1;
+        $('#watch').text(gseconds);
+      }
+    }// updates the time countdown from 5 deducting 1 every second
 
     this.displayPlayerLives = function () {
       $("#oneLives").text("Player 1: " + player1Lives);
@@ -18,24 +47,20 @@ $(document).ready(function () {
     }// displays player lives
 
     this.reducePlayerLives= function(){
-        console.log(this.player)
-        console.log("Reduce player lives works!")
         if (this.player === 1) {
           player1Lives = player1Lives - 1;
-          $("#oneLives").text("Player 1: " + player1Lives);
-          console.log("Player 1 Lives Reduced!")
+          this.displayPlayerLives();
         } else if (this.player === 2) {
           player2Lives = player2Lives - 1;
-          $("#twoLives").text("Player 2: " + player2Lives);
-          console.log("Player 2 Lives Reduced!")
+          this.displayPlayerLives();
         }
       }//function to reduce player lives when they get a question wrong
 
     this.displayPlayer = function() {
       if(this.player === 1){
-      $('#playerTurn').text("It's Player 1's turn!");
+      $('#playerTurn').text("It's Player 1's turn!").css("color","#044581");
     } else if (this.player === 2) {
-      $('#playerTurn').text("It's Player 2's turn!");
+      $('#playerTurn').text("It's Player 2's turn!").css("color","#B22222");
     }
   }//displays the players turn on the equation area
 
@@ -70,52 +95,44 @@ $(document).ready(function () {
           break;
         default:
       }
-    }
+    }// chooses arithmetic operators to use
 
     this.solveEquation = function () {
       this.solution = eval(this.x + this.operator + this.y);
-    }
+    } //evaluates equations
 
     this.getUserInput = function () {
       return Number($('#playerInput').val());
-    }
+    }//returns players input
 
     this.checkUserInput = function (userInput) {
-      console.log(this)
-      console.log(userInput, this.solution);
-      console.log(typeof userInput, typeof this.solution);
       if (userInput === this.solution) {
         return true;
       } else {
       return false;
       }
-    }
+    }// checks user input against solved equation
+
     this.displayEquation = function() {
-      console.log("display function works!")
       $('#valueX').text(this.x);
       $('#operator').text(this.operator);
       $('#valueY').text(this.y);
       console.log(game)
       console.log(this.x + ' ' + this.operator + ' ' + this.y + ' = ' + this.solution)
-    }
+    }//displays equation for player to solve
 
     this.getResult = function(event) {
       var userInput = this.getUserInput()
       var result = this.checkUserInput(userInput)
-      console.log(result)
-      console.log(typeof result)
       if (result) {
         $('#aBoxOne').text('Whoa!Your math rocks!');
         this.start();
       } else {
         $('#aBoxOne').text('Whoa!Your math stinks! Lose a life!');
-        console.log(this.player)
         this.reducePlayerLives();
         this.start();
-        console.log("Player1lives = " + player1Lives);
-        console.log("Player2Lives = " + player2Lives);
       }
-    }//get results
+    }//get results see who wins or loses
 
     this.clearAnswer =function () {
       $('#playerInput').val("")
@@ -127,32 +144,37 @@ $(document).ready(function () {
       } else if (player2Lives === 0) {
         window.alert("Player 2...YOU LOSE!")
       }
+    }//displays loser message!
+
+    this.nextPlayersTurn = function () {
+      this.getResult()
+      this.changePlayer();
+      this.displayPlayer();
+      this.displayPlayerLives();
+      this.clearAnswer();
+      this.checkForWinner();
+      this.startTimer();
+      this.resetTimer();
     }
 
     this.enterEventHandler = function (event) {
       if (event.keyCode === 13) {
-        console.log(this)
         event.preventDefault()
-        this.getResult()
-        this.changePlayer();
-        this.displayPlayer();
-        this.displayPlayerLives();
-        this.clearAnswer();
-        this.checkForWinner();
-        console.log("This is the " + this.player)
+        this.nextPlayersTurn();
       }
-    }
+    }// on "enter" fires all functions and commences the game
 
     this.start = function () {
-      this.setValues(1, 20);
+      this.setValues(1, 30);
       this.selectOperator();
       this.solveEquation();
       this.displayEquation();
       this.displayPlayerLives();
-    }
+      }
   } // Game
 
   var game = new Game();
   game.start();
   $('#playerInput').on('keydown', game.enterEventHandler.bind(game))
+
 });
