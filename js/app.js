@@ -73,7 +73,7 @@ $(document).ready(function () {
     } //setting values of x and y
 
     function getRandomNumber (min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
+      return Math.round(Math.random() * (max - min)) + min;
     }// random number to generate for operators
 
     this.selectOperator = function () {
