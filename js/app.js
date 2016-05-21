@@ -87,17 +87,19 @@ $(document).ready(function () {
           break;
         case 2:
           this.operator = '*'
+          this.x = Math.floor((Math.random() * 14) + 1);
+          this.y = Math.floor((Math.random() * 14) + 1);
           break;
         case 3:
           this.operator = '/'
           break;
         default:
       }
-    }// chooses arithmetic operators to use
+    };// chooses arithmetic operators to use
 
     this.solveEquation = function () {
-      this.solution = eval(this.x + this.operator + this.y);
-    } //evaluates equations
+        this.solution = eval(this.x + this.operator + this.y);
+    }; //evaluates equations
 
     this.getUserInput = function () {
       return Number($('#playerInput').val());
@@ -161,7 +163,7 @@ $(document).ready(function () {
     }// on "enter" fires all functions and commences the game
 
     this.start = function () {
-      this.setValues(1, 30);
+      this.setValues(1, 50);
       this.selectOperator();
       this.solveEquation();
       this.displayEquation();
