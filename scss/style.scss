@@ -46,7 +46,10 @@
   flex-direction: column;
   align-items: center;
   color: #EBEBEB;
-  margin-right: -300px;
+  margin-right: -150px;
+  span{
+    width:150px;
+  }
 }
 
 #equationArea{
@@ -141,6 +144,7 @@ section{
 
 body {
   font-family: 'Architects Daughter', cursive;
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=34233);
 }
 
 span{

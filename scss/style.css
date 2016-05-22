@@ -36,7 +36,9 @@
   flex-direction: column;
   align-items: center;
   color: #EBEBEB;
-  margin-right: -300px; }
+  margin-right: -150px; }
+  #right span {
+    width: 150px; }
 
 #equationArea {
   width: 450px;
@@ -106,7 +108,8 @@ section {
   align-items: center; }
 
 body {
-  font-family: 'Architects Daughter', cursive; }
+  font-family: 'Architects Daughter', cursive;
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=34233); }
 
 span {
   text-align: center; }
