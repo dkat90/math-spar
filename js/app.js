@@ -76,29 +76,66 @@ $(document).ready(function () {
       return Math.round(Math.random() * (max - min)) + min;
     }// random number to generate for operators
 
+    function randomMultiplesofThree(){
+      return Math.floor(getRandomNumber(0, 50) * 3);
+    }
+    //generates random multiples of three
+
+    function randomMultiplesofTwo(){
+      return Math.floor(getRandomNumber(0, 50) * 2);
+    }
+    // generates random multiples of twoLives
+
     this.selectOperator = function () {
       var choice = getRandomNumber(0, 3);
       switch (choice) {
         case 0:
-          this.operator = '+'
+          this.operator = '+';
           break;
         case 1:
-          this.operator = '-'
+          this.operator = '-';
           break;
         case 2:
-          this.operator = '*'
+          this.operator = '*';
           this.x = Math.floor((Math.random() * 14) + 1);
           this.y = Math.floor((Math.random() * 14) + 1);
           break;
+          // changes x and y varibales range from 50 to 14 of it is "*"
         case 3:
-          this.operator = '/'
+          this.operator = '/';
+          var divisionChoice = getRandomNumber(0, 1);
+          switch(divisionChoice){
+            case 0:
+            this.x = randomMultiplesofThree();
+            if (this.x%3 === 0 && this.x%6 !== 0 && this.x%9 !== 0  ){
+              this.y = 3;
+            } else if (this.x>=6 && this.x%6 === 0){
+              this.y = 6;
+            } else if (this.x>=9 && this.x%9 === 0){
+              this.y = 9;
+            }
+            break;
+            //in this case adds logic for multples of 3 to be divided by either 3,6 or 9
+
+            case 1:
+            this.x = randomMultiplesofTwo();
+            if (this.x%2 === 0 && this.x%4 !== 0 & this.x%6 !== 0){
+              this.y = 2;
+            } else if (this.x>=4 && this.x%4 === 0){
+              this.y = 4;
+            } else if (this.x>=6 && this.x%6 === 0){
+              this.y = 6;
+            }
+            break;
+              //in this case adds logic for multples of 2 to be divided by either 2,4 or 6
+          }
           break;
         default:
       }
     };// chooses arithmetic operators to use
 
     this.solveEquation = function () {
-        this.solution = eval(this.x + this.operator + this.y);
+        this.solution = Math.round((eval(this.x + this.operator + this.y)) * 10) / 10;
     }; //evaluates equations
 
     this.getUserInput = function () {
