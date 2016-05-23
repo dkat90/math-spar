@@ -1,3 +1,6 @@
+@font-face {
+  font-family: "KGTenThousandReasons";
+  src: url("fonts/KGTenThousandReasons.ttf"); }
 .commonStyling, .playerLives, #displayEquation, #playerTurn, #playerInput, #aBoxOne, #watch {
   border: 4px solid #FF8C00;
   background-color: #8B7D6B;
@@ -36,9 +39,11 @@
   flex-direction: column;
   align-items: center;
   color: #EBEBEB;
-  margin-right: -150px; }
+  margin-right: -150px;
+  margin-left: 15px; }
   #right span {
-    width: 150px; }
+    width: 150px;
+    margin-bottom: 10px; }
 
 #equationArea {
   width: 450px;
@@ -49,7 +54,7 @@
 #playerTurn {
   width: 200px;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   width: 250px; }
 
 #playArea {
@@ -83,10 +88,11 @@
   color: #EBEBEB; }
 
 #watch {
-  font-size: 20px;
+  font-size: 18px;
   width: 100px;
   text-align: center;
-  color: yellow; }
+  color: yellow;
+  padding: 4px; }
 
 i {
   color: #FFC1C1; }
@@ -108,8 +114,7 @@ section {
   align-items: center; }
 
 body {
-  font-family: 'Architects Daughter', cursive;
-  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=34233); }
+  font-family: "KGTenThousandReasons"; }
 
 span {
   text-align: center; }
